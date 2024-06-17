@@ -1,6 +1,6 @@
-import Data.AnimalTypeData;
-import Data.ColorData;
-import Data.CommandsData;
+import data.AnimalTypeData;
+import data.ColorData;
+import data.CommandsData;
 import animals.Animal;
 import animals.factory.AnimalFactory;
 
@@ -73,7 +73,7 @@ public class Main {
                         System.out.println("Вы ввели имя: " + nameAnimal);
 
 
-                        int age = -1;
+                        float age = -1;
                         boolean validAge = false;
 
                         while (!validAge) {
@@ -82,10 +82,17 @@ public class Main {
 
 
                             try {
-                                age = Integer.parseInt(ageAnimal);
-                                animalsName.setAge(age);
-                                validAge = true;
-                            } catch (NumberFormatException e) {
+                                age = Float.parseFloat(ageAnimal);
+                                if (age > 0) {
+                                    animalsName.setAge(age);
+                                    validAge = true;
+                                }
+                                else {
+                                    System.out.println("Некорректный ввод. Пожалуйста, введите положительное число.");
+                                }
+                            }
+
+                            catch (NumberFormatException e) {
                                 System.out.println("Некорректный ввод. Пожалуйста, введите число.");
 
                             }
@@ -103,8 +110,14 @@ public class Main {
 
                             try {
                                 weight = Float.parseFloat(weightAnimal);
-                                animalsName.setWeight(weight);
-                                validWeight = true;
+                                if (weight >0) {
+                                    animalsName.setWeight(weight);
+                                    validWeight = true;
+                                }
+                                else {
+                                    System.out.println("Некорректный ввод. Пожалуйста, введите положительное число.");
+                                }
+
                             } catch (NumberFormatException e) {
                                 System.out.println("Некорректный ввод. Пожалуйста, введите число.");
 

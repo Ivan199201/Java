@@ -1,11 +1,11 @@
 package animals;
 
-import Data.ColorData;
+import data.ColorData;
 
 public abstract class Animal {
 
     private String name = "";
-    private int age = -1;
+    private float age = -1;
     private float weight = -1;
     private ColorData color = null;
 
@@ -18,12 +18,12 @@ public abstract class Animal {
         this.name = name;
     }
 
-    public int getAge() {
+    public float getAge() {
 
         return (int) age;
     }
 
-    public void setAge(int age) {
+    public void setAge(float age) {
         this.age = age;
     }
 
@@ -56,7 +56,7 @@ public abstract class Animal {
     private String setAgePd() {
         float remainder = age % 10;
 
-        if (age >= 11 && age < +19) {
+        if (age >= 11 && age < 19) {
             return "лет";
         }
         if (remainder == 1) {

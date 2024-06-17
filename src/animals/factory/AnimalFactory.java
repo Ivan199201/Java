@@ -1,6 +1,6 @@
 package animals.factory;
 
-import Data.AnimalTypeData;
+import data.AnimalTypeData;
 import animals.Animal;
 import animals.birds.Duck;
 import animals.pets.Cat;
