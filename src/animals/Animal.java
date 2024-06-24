@@ -19,8 +19,7 @@ public abstract class Animal {
     }
 
     public float getAge() {
-
-        return (int) age;
+        return age;
     }
 
     public void setAge(float age) {
@@ -28,7 +27,6 @@ public abstract class Animal {
     }
 
     public float getWeight() {
-
         return weight;
     }
 
@@ -48,7 +46,7 @@ public abstract class Animal {
     public abstract void say();
 
     public String toString() {
-        return String.format("Привет! меня зовут %s, мне %.1s %s, я вешу %.1f кг, мой цвет - %s.",
+        return String.format("Привет! меня зовут %s, мне %.1f %s, я вешу %.1f кг, мой цвет - %s.",
                 name, age, setAgePd(), weight, (color != null ? color.getColor().toLowerCase():"неизвестно"));
     }
 
